@@ -16,7 +16,7 @@
 <meta property="og:description" content="今天更新了最新的 pb, 发现能够自定义 tags 模板页面了，但是页面标题里面不包含 tag 名，感觉不美观，就在前端模板 tags.html 里面加了段 js，修改页面的标题。 由于 tag 页面链接变成了 https:&#x2F;&#x2F;savalone.com&#x2F;tag&#x2F;软件&#x2F; 这样，所以我们要匹配到第四个和第五个“&#x2F;”符号之间的“软件”，而结果匹配到的是“%E8%BD%AF%E4%BB%B6”，所以我们还">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-30T04:36:50.285Z">
-<meta property="article:modified_time" content="2020-03-30T04:40:26.882Z">
+<meta property="article:modified_time" content="2020-03-30T04:42:41.548Z">
 <meta property="article:author" content="Savalone">
 <meta name="twitter:card" content="summary">
   
@@ -180,10 +180,8 @@
       
         <p>今天更新了最新的 pb, 发现能够自定义 tags 模板页面了，但是页面标题里面不包含 tag 名，感觉不美观，就在前端模板 tags.html 里面加了段 js，修改页面的标题。</p>
 <p>由于 tag 页面链接变成了 <a href="https://savalone.com/tag/软件/" target="_blank" rel="noopener">https://savalone.com/tag/软件/</a> 这样，所以我们要匹配到第四个和第五个<code>“/”</code>符号之间的<code>“软件”</code>，而结果匹配到的是<code>“%E8%BD%AF%E4%BB%B6”</code>，所以我们还要 <code>decode</code> 解码一下。</p>
-<p>###js 代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> url = <span class="string">'&#123;pboot:pageurl&#125;'</span>;</span><br><span class="line"><span class="keyword">var</span> tagName = (<span class="built_in">decodeURI</span>((url.split(<span class="comment">///)[4]))); // 正则提取链接的第四和第五个'/'符号之间的参数，并解码</span></span><br><span class="line"><span class="keyword">var</span> sitetitle = <span class="string">'&#123;pboot:sitetitle&#125;'</span>;</span><br><span class="line"><span class="built_in">document</span>.title = tagName + <span class="string">'-'</span> + sitetitle;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p>####或者 jq：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">$(function()&#123;</span></span><br><span class="line"><span class="regexp">var url = '&#123;pboot:pageurl&#125;';</span></span><br><span class="line"><span class="regexp">var tagName = (decodeURI((url.split(/</span><span class="comment">//)[4]))); // 正则提取链接的第四和第五个'/'符号之间的参数，并解码</span></span><br><span class="line"><span class="keyword">var</span> sitetitle = <span class="string">'&#123;pboot:sitetitle&#125;'</span>;</span><br><span class="line">$(<span class="string">'title'</span>).html(tagName + <span class="string">'-'</span> + sitetitle);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="js-代码如下："><a href="#js-代码如下：" class="headerlink" title="js 代码如下："></a>js 代码如下：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> url = <span class="string">'&#123;pboot:pageurl&#125;'</span>;</span><br><span class="line"><span class="keyword">var</span> tagName = (<span class="built_in">decodeURI</span>((url.split(<span class="comment">///)[4]))); // 正则提取链接的第四和第五个'/'符号之间的参数，并解码</span></span><br><span class="line"><span class="keyword">var</span> sitetitle = <span class="string">'&#123;pboot:sitetitle&#125;'</span>;</span><br><span class="line"><span class="built_in">document</span>.title = tagName + <span class="string">'-'</span> + sitetitle;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="或者-jq："><a href="#或者-jq：" class="headerlink" title="或者 jq："></a>或者 jq：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">$(function()&#123;</span></span><br><span class="line"><span class="regexp">var url = '&#123;pboot:pageurl&#125;';</span></span><br><span class="line"><span class="regexp">var tagName = (decodeURI((url.split(/</span><span class="comment">//)[4]))); // 正则提取链接的第四和第五个'/'符号之间的参数，并解码</span></span><br><span class="line"><span class="keyword">var</span> sitetitle = <span class="string">'&#123;pboot:sitetitle&#125;'</span>;</span><br><span class="line">$(<span class="string">'title'</span>).html(tagName + <span class="string">'-'</span> + sitetitle);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -275,6 +273,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
