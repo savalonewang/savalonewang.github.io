@@ -412,7 +412,7 @@ pre {
 }
 
 code,kbd,pre,samp {
-	font-family: monospace,monospace;
+	font-family: "pt serif",source-han-serif-tc,Cambria,Cochin,Georgia,Times,times new roman,serif;
 	font-size: 1em
 }
 
@@ -932,7 +932,6 @@ body {
 .left-col #header .header-author {
 	text-align: center;
 	margin: .67em 0;
-	font-family: Roboto,serif;
 	font-size: 30px;
 	transition: .3s
 }
@@ -1016,9 +1015,6 @@ body {
 	color: #666
 }
 
-.article-entry code,.article-entry pre {
-	font-family: Source Code Pro,Consolas,Monaco,Menlo,monospace
-}
 
 .article-entry code {
 	background: #eee;
@@ -1097,7 +1093,6 @@ body {
 
 .article-entry .gist .gist-file {
 	border: none;
-	font-family: Source Code Pro,Consolas,Monaco,Menlo,monospace;
 	margin: 0
 }
 
@@ -1190,7 +1185,6 @@ pre .css~* .id,pre .id {
 	position: relative;
 	border-radius: 0 5px 5px 0;
 	margin: 5px 9px 5px 8px;
-	font-family: Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace
 }
 
 .tagcloud a:hover {
@@ -1676,7 +1670,6 @@ pre .css~* .id,pre .id {
 .archives .archive-article-title span:before {
 	display: inline-block;
 	content: "\201C";
-	font-family: serif;
 	font-size: 30px;
 	float: left;
 	margin: 4px 4px 0 -12px;
@@ -1801,7 +1794,6 @@ pre .css~* .id,pre .id {
 	background: none;
 	border: none;
 	border-bottom: 2px solid #fff;
-	font-family: Roboto,serif
 }
 
 .tools-col .tools-section .search-wrap .icon {
@@ -2199,7 +2191,6 @@ pre .css~* .id,pre .id {
 	margin: 0 3px;
 	background: #ddd;
 	border: 1px solid #ccc;
-	font-family: Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;
 	word-wrap: break-word;
 	font-size: 14px
 }
@@ -2303,7 +2294,6 @@ pre .css~* .id,pre .id {
 	color: #657b83;
 	border: 1px solid #ccc;
 	text-shadow: 0 1px #444;
-	font-family: Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace
 }
 
 .article-entry pre code {
@@ -2856,7 +2846,6 @@ pre .css~* .id,pre .id {
 	margin: 0 0 -10px -185px;
 	cursor: default;
 	pointer-events: none;
-	font-family: Satisfy,cursive;
 	-webkit-font-smoothing: antialiased;
 	transition: opacity .3s .3s;
 	padding-bottom: 80px
@@ -2921,7 +2910,6 @@ pre .css~* .id,pre .id {
 
 #footer {
 	font-size: 12px;
-	font-family: Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;
 	text-shadow: 0 1px #fff;
 	position: absolute;
 	bottom: 30px;
@@ -3401,7 +3389,6 @@ pre .css~* .id,pre .id {
 	.header-author {
 		text-align: center;
 		margin: .67em 0;
-		font-family: Roboto,serif;
 		font-size: 30px;
 		transition: .3s
 	}
